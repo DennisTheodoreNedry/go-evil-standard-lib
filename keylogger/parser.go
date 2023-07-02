@@ -1,4 +1,4 @@
-package keylogger
+package main
 
 import (
 	"fmt"

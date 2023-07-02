@@ -1,4 +1,4 @@
-package bombs
+package main
 
 import (
 	"fmt"

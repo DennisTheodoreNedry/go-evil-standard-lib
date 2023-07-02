@@ -1,4 +1,4 @@
-package infect
+package main
 
 import (
 	"fmt"

@@ -1,4 +1,4 @@
-package self
+package main
 
 import (
 	"fmt"
