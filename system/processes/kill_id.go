@@ -22,7 +22,7 @@ func Kill_id(value string, data_object *json.Json_t) []string {
 			"}",
 		}})
 
-	data_object.Add_go_import("github.com/s9rA16Bf4/go-evil/utility/tools")
+	data_object.Add_go_import("github.com/s9rA16Bf4/Go-tools")
 	data_object.Add_go_import("github.com/redcode-labs/Coldfire")
 
 	parameter_1 := data_object.Generate_int_array_parameter(value)

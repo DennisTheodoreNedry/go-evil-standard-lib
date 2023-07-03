@@ -26,7 +26,7 @@ func Change_background(value string, data_object *json.Json_t) []string {
 		body = append(body, "err := exec.Command(\"powershell\", fmt.Sprintf(\"C:/Users/%s/AppData/Local/Temp/the_trunk.ps1\", user)).Run()", "if err != nil{", "spine.log(err.Error())", "}")
 
 		data_object.Add_go_import("io/ioutil")
-		data_object.Add_go_import("github.com/s9rA16Bf4/go-evil/utility/tools")
+		data_object.Add_go_import("github.com/s9rA16Bf4/Go-tools")
 
 	default:
 		body = append(body, "targets := []string{\"gnome\", \"cinnamon\", \"kde\", \"mate\", \"budgie\", \"lxqt\", \"xfce\", \"deepin\"}")

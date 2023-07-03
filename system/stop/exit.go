@@ -20,7 +20,7 @@ func Exit(return_code string, data_object *json.Json_t) []string {
 			"spine.terminate = true",
 		}})
 
-	data_object.Add_go_import("github.com/s9rA16Bf4/go-evil/utility/tools")
+	data_object.Add_go_import("github.com/s9rA16Bf4/Go-tools")
 
 	parameter_1 := data_object.Generate_int_array_parameter(return_code)
 
