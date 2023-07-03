@@ -1,8 +1,8 @@
 package set
 
 import (
+	tools "github.com/s9rA16Bf4/Go-tools"
 	"github.com/s9rA16Bf4/go-evil/utility/structure/json"
-	"github.com/s9rA16Bf4/go-evil/utility/tools"
 )
 
 // Sets the width of the window

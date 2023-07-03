@@ -3,7 +3,7 @@ package generate
 import (
 	"fmt"
 
-	"github.com/s9rA16Bf4/go-evil/utility/tools"
+	tools "github.com/s9rA16Bf4/Go-tools"
 )
 
 func Generate_parameters() ([]string, string) {
