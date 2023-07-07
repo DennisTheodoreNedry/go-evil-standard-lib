@@ -3,14 +3,14 @@ package policy
 import (
 	"fmt"
 
-	"github.com/s9rA16Bf4/Go-tools/tools"
+	tools "github.com/s9rA16Bf4/Go-tools"
 	"github.com/s9rA16Bf4/go-evil/utility/structure/functions"
 	"github.com/s9rA16Bf4/go-evil/utility/structure/json"
-	"github.com/s9rA16Bf4/notify_handler/go/notify"
+	notify "github.com/s9rA16Bf4/notify_handler"
 )
 
 func Set_execution(value string, data_object *json.Json_t) []string {
-	value = tools.Erase_delimiter(value, []string{"\""}, -1)
+	value = tools.EraseDelimiter(value, []string{"\""}, -1)
 
 	function_call := "set_execution_policy"
 	possible_policys := []string{"AllSigned", "Bypass", "Default", "RemoteSigned", "Restricted", "Undefined", "Unrestricted"}
@@ -23,7 +23,7 @@ func Set_execution(value string, data_object *json.Json_t) []string {
 	}
 
 	if !found {
-		notify.Error(fmt.Sprintf("The policy '%s' is not known", value), "powershell.set_execution_policy()")
+		notify.Error(fmt.Sprintf("The policy '%s' is not known", value), "powershell.set_execution_policy()", 1)
 	}
 
 	data_object.Add_go_function(functions.Go_func_t{Name: function_call, Func_type: "", Part_of_struct: "", Return_type: "",

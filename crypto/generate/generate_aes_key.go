@@ -5,19 +5,19 @@ import (
 
 	"github.com/s9rA16Bf4/go-evil/domains/crypto/configuration"
 
-	"github.com/s9rA16Bf4/Go-tools/tools"
+	tools "github.com/s9rA16Bf4/Go-tools"
 	"github.com/s9rA16Bf4/go-evil/utility/structure/json"
-	"github.com/s9rA16Bf4/notify_handler/go/notify"
+	notify "github.com/s9rA16Bf4/notify_handler"
 )
 
 // Generates an aes key used for encrypting/decrypting
 func AES_key(value string, data_object *json.Json_t) []string {
-	value = tools.Erase_delimiter(value, []string{"\""}, -1)
+	value = tools.EraseDelimiter(value, []string{"\""}, -1)
 
-	key_size := tools.String_to_int(value)
+	key_size := tools.StringToInt(value)
 
 	if key_size == -1 {
-		notify.Error(fmt.Sprintf("Failed to convert '%s' to an integer", value), "crypto.generate_key()")
+		notify.Error(fmt.Sprintf("Failed to convert '%s' to an integer", value), "crypto.generate_key()", 1)
 	}
 
 	key := tools.Generate_random_n_string(key_size)

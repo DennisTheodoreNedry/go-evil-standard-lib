@@ -5,10 +5,10 @@ import (
 	"regexp"
 	"time"
 
-	"github.com/s9rA16Bf4/Go-tools/tools"
+	tools "github.com/s9rA16Bf4/Go-tools"
 	"github.com/s9rA16Bf4/go-evil/utility/structure/functions"
 	"github.com/s9rA16Bf4/go-evil/utility/structure/json"
-	"github.com/s9rA16Bf4/notify_handler/go/notify"
+	notify "github.com/s9rA16Bf4/notify_handler"
 )
 
 const (
@@ -27,17 +27,15 @@ func Until(value string, data_object *json.Json_t) []string {
 	result_hour_min := regex2.FindAllStringSubmatch(value, -1)
 
 	if len(result_full) == 0 && len(result_hour_min) == 0 {
-		notify.Error("Failed to find a valid time format!", "time.Until")
+		notify.Error("Failed to find a valid time format!", "time.Until", 1)
 	}
 
 	year, month, day := time.Now().Date()
 
 	parameters := []string{
-		tools.Int_to_string(year),
-		tools.Int_to_string(int(month)),
-		tools.Int_to_string(day),
-		// hour
-		// minute
+		tools.IntToString(year),
+		tools.IntToString(int(month)),
+		tools.IntToString(day),
 	}
 
 	if len(result_full) > 0 {

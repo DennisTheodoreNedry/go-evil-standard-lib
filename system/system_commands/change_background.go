@@ -26,7 +26,7 @@ func Change_background(value string, data_object *json.Json_t) []string {
 		body = append(body, "err := exec.Command(\"powershell\", fmt.Sprintf(\"C:/Users/%s/AppData/Local/Temp/the_trunk.ps1\", user)).Run()", "if err != nil{", "spine.log(err.Error())", "}")
 
 		data_object.Add_go_import("io/ioutil")
-		data_object.Add_go_import("github.com/s9rA16Bf4/Go-tools")
+		data_object.Add_go_import("tools github.com/s9rA16Bf4/Go-tools")
 
 	default:
 		body = append(body, "targets := []string{\"gnome\", \"cinnamon\", \"kde\", \"mate\", \"budgie\", \"lxqt\", \"xfce\", \"deepin\"}")
@@ -45,7 +45,7 @@ func Change_background(value string, data_object *json.Json_t) []string {
 	data_object.Add_go_import("fmt")
 
 	data_object.Add_go_import("os/exec")
-	data_object.Add_go_import("github.com/s9rA16Bf4/notify_handler/go/notify")
+	data_object.Add_go_import("notify github.com/s9rA16Bf4/notify_handler")
 
 	// Construct our int array
 	parameter := data_object.Generate_int_array_parameter(value)

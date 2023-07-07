@@ -4,11 +4,11 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/s9rA16Bf4/Go-tools/tools"
+	tools "github.com/s9rA16Bf4/Go-tools"
 	"github.com/s9rA16Bf4/go-evil/utility/structure"
 	"github.com/s9rA16Bf4/go-evil/utility/structure/functions"
 	"github.com/s9rA16Bf4/go-evil/utility/structure/json"
-	"github.com/s9rA16Bf4/notify_handler/go/notify"
+	notify "github.com/s9rA16Bf4/notify_handler"
 )
 
 // Pings a target, takes in an evil array with the following contents
@@ -22,14 +22,14 @@ func Ping(value string, data_object *json.Json_t) []string {
 	arr := structure.Create_evil_object(value)
 
 	if arr.Length() != 3 {
-		notify.Error(fmt.Sprintf("Expected three values, but recieved %d", arr.Length()), "network.ping()")
+		notify.Error(fmt.Sprintf("Expected three values, but recieved %d", arr.Length()), "network.ping()", 1)
 	}
 
 	target := arr.Get(0)
 
-	count := tools.String_to_int(arr.Get(1))
+	count := tools.StringToInt(arr.Get(1))
 	if count == -1 {
-		notify.Error(fmt.Sprintf("Failed to convert '%s' to an integer", arr.Get(1)), "network.ping()")
+		notify.Error(fmt.Sprintf("Failed to convert '%s' to an integer", arr.Get(1)), "network.ping()", 1)
 	}
 
 	protocol := strings.ToLower(arr.Get(2))
@@ -77,7 +77,7 @@ func Ping(value string, data_object *json.Json_t) []string {
 	data_object.Add_go_import("net")
 	data_object.Add_go_import("time")
 	data_object.Add_go_import("github.com/tatsushid/go-fastping")
-	data_object.Add_go_import("github.com/s9rA16Bf4/notify_handler/go/notify")
+	data_object.Add_go_import("notify github.com/s9rA16Bf4/notify_handler")
 
 	int_target := data_object.Generate_int_array_parameter(target)
 	int_protocol := data_object.Generate_int_array_parameter(protocol)

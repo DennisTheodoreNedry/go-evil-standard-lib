@@ -3,14 +3,14 @@ package set
 import (
 	"fmt"
 
-	"github.com/s9rA16Bf4/Go-tools/tools"
+	tools "github.com/s9rA16Bf4/Go-tools"
 	"github.com/s9rA16Bf4/go-evil/utility/structure/functions"
 	"github.com/s9rA16Bf4/go-evil/utility/structure/json"
 )
 
 // Sets a compiletime/runtime variable with a value
 func Set(compile_time bool, value string, data_object *json.Json_t) []string {
-	value = tools.Erase_delimiter(value, []string{"\""}, -1)
+	value = tools.EraseDelimiter(value, []string{"\""}, -1)
 
 	if compile_time {
 		data_object.Set_variable_value(value)

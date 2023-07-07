@@ -50,7 +50,7 @@ func Run(data_object *json.Json_t) []string {
 
 	data_object.Add_go_import("github.com/zserge/lorca")
 	data_object.Add_go_import("net/url")
-	data_object.Add_go_import("github.com/s9rA16Bf4/notify_handler/go/notify")
+	data_object.Add_go_import("notify github.com/s9rA16Bf4/notify_handler")
 	data_object.Add_go_import("fmt")
 
 	return []string{function_call}

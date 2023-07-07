@@ -6,7 +6,7 @@ import (
 	"github.com/s9rA16Bf4/go-evil/utility/structure"
 	"github.com/s9rA16Bf4/go-evil/utility/structure/functions"
 	"github.com/s9rA16Bf4/go-evil/utility/structure/json"
-	"github.com/s9rA16Bf4/notify_handler/go/notify"
+	notify "github.com/s9rA16Bf4/notify_handler"
 )
 
 // Copies the target file to the new provided location
@@ -16,7 +16,7 @@ func Copy(value string, data_object *json.Json_t) []string {
 	arr := structure.Create_evil_object(value)
 
 	if arr.Length() != 2 {
-		notify.Error(fmt.Sprintf("Obtained evil array had size %d, but 2 was requested", arr.Length()), "system.move()")
+		notify.Error(fmt.Sprintf("Obtained evil array had size %d, but 2 was requested", arr.Length()), "system.move()", 1)
 	}
 
 	old_path := arr.Get(0)
@@ -49,7 +49,7 @@ func Copy(value string, data_object *json.Json_t) []string {
 
 	data_object.Add_go_import("io")
 	data_object.Add_go_import("os")
-	data_object.Add_go_import("github.com/s9rA16Bf4/notify_handler/go/notify")
+	data_object.Add_go_import("notify github.com/s9rA16Bf4/notify_handler")
 
 	// Construct our int array
 	old_parameter := data_object.Generate_int_array_parameter(old_path)

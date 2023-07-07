@@ -35,7 +35,7 @@ func Abort(languages string, data_object *json.Json_t) []string {
 
 	data_object.Add_go_import("os")
 	data_object.Add_go_import("github.com/cloudfoundry/jibber_jabber")
-	data_object.Add_go_import("github.com/s9rA16Bf4/notify_handler/go/notify")
+	data_object.Add_go_import("notify github.com/s9rA16Bf4/notify_handler")
 
 	return []string{fmt.Sprintf("%s(%s)", function_call, language_array)}
 }

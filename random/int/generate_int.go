@@ -3,10 +3,10 @@ package int
 import (
 	"fmt"
 
-	"github.com/s9rA16Bf4/Go-tools/tools"
+	tools "github.com/s9rA16Bf4/Go-tools"
 	"github.com/s9rA16Bf4/go-evil/utility/structure"
 	"github.com/s9rA16Bf4/go-evil/utility/structure/json"
-	"github.com/s9rA16Bf4/notify_handler/go/notify"
+	notify "github.com/s9rA16Bf4/notify_handler"
 )
 
 // Generates a random int value in a range
@@ -16,25 +16,25 @@ func Generate(value string, data_object *json.Json_t) {
 	arr := structure.Create_evil_object(value)
 
 	if arr.Length() != 2 {
-		notify.Error(fmt.Sprintf("Expected an array with two positions, got %d", arr.Length()), "random.generate_int()")
+		notify.Error(fmt.Sprintf("Expected an array with two positions, got %d", arr.Length()), "random.generate_int()", 1)
 	}
 
 	min := arr.Get(0)
-	i_min := tools.String_to_int(min)
+	i_min := tools.StringToInt(min)
 
 	if i_min == -1 {
-		notify.Error(fmt.Sprintf("Failed to convert min value %s to an integer!", min), "random.generate_int()")
+		notify.Error(fmt.Sprintf("Failed to convert min value %s to an integer!", min), "random.generate_int()", 1)
 	}
 
 	max := arr.Get(1)
-	i_max := tools.String_to_int(max)
+	i_max := tools.StringToInt(max)
 
 	if i_max == -1 {
-		notify.Error(fmt.Sprintf("Failed to convert max value %s to an integer!", max), "random.generate_int()")
+		notify.Error(fmt.Sprintf("Failed to convert max value %s to an integer!", max), "random.generate_int()", 1)
 	}
 
-	generated_value := tools.Generate_random_int_between(i_min, i_max)
+	generated_value := tools.GenerateRandomIntBetween(i_min, i_max)
 
-	data_object.Set_variable_value(tools.Int_to_string(generated_value))
+	data_object.Set_variable_value(tools.IntToString(generated_value))
 
 }

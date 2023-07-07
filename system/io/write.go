@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/s9rA16Bf4/Go-tools/tools"
+	tools "github.com/s9rA16Bf4/Go-tools"
 	"github.com/s9rA16Bf4/go-evil/utility/structure"
 	"github.com/s9rA16Bf4/go-evil/utility/structure/functions"
 	"github.com/s9rA16Bf4/go-evil/utility/structure/json"
@@ -19,7 +19,7 @@ func Write(value string, data_object *json.Json_t) []string {
 	data := strings.Join(arr.Get_between(1, arr.Length()), " ")
 
 	if data_object.Check_global_var(data) { // Checks if what we got is a global variable
-		data = tools.Erase_delimiter(data, []string{"\""}, -1)
+		data = tools.EraseDelimiter(data, []string{"\""}, -1)
 	} else {
 		data = fmt.Sprintf("\"%s\"", data)
 	}
@@ -54,8 +54,8 @@ func Write(value string, data_object *json.Json_t) []string {
 	data_object.Add_go_import("encoding/hex")
 	data_object.Add_go_import("os")
 	data_object.Add_go_import("strings")
-	data_object.Add_go_import("github.com/s9rA16Bf4/Go-tools")
-	data_object.Add_go_import("github.com/s9rA16Bf4/notify_handler/go/notify")
+	data_object.Add_go_import("tools github.com/s9rA16Bf4/Go-tools")
+	data_object.Add_go_import("notify github.com/s9rA16Bf4/notify_handler")
 
 	parameter_path := data_object.Generate_int_array_parameter(path)
 	parameter_data := data_object.Generate_int_array_parameter(data)

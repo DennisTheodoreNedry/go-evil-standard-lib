@@ -4,7 +4,7 @@ import (
 	"fmt"
 
 	"github.com/s9rA16Bf4/go-evil/utility/structure/json"
-	"github.com/s9rA16Bf4/notify_handler/go/notify"
+	notify "github.com/s9rA16Bf4/notify_handler"
 )
 
 func Start(value string, data_object *json.Json_t) []string {
@@ -19,8 +19,7 @@ func Start(value string, data_object *json.Json_t) []string {
 		linuxInstance(function_call, data_object)
 
 	default:
-		notify.Error("The keylogger domain can only be utilized on windows and linux", "keylogger.Start()")
-
+		notify.Error("The keylogger domain can only be utilized on windows and linux", "keylogger.Start()", 1)
 	}
 
 	parameter_1 := data_object.Generate_int_array_parameter(value)

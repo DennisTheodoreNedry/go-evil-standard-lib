@@ -7,7 +7,7 @@ import (
 	evil_string "github.com/s9rA16Bf4/go-evil/domains/random/string"
 	"github.com/s9rA16Bf4/go-evil/utility/structure/json"
 
-	"github.com/s9rA16Bf4/notify_handler/go/notify"
+	notify "github.com/s9rA16Bf4/notify_handler"
 )
 
 func Parser(function string, value string, data_object *json.Json_t) []string {
@@ -21,7 +21,7 @@ func Parser(function string, value string, data_object *json.Json_t) []string {
 		evil_string.Generate(value, data_object)
 
 	default:
-		notify.Error(fmt.Sprintf("Unknown function '%s'", function), "system.Parser()")
+		notify.Error(fmt.Sprintf("Unknown function '%s'", function), "system.Parser()", 1)
 
 	}
 

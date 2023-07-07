@@ -5,18 +5,18 @@ import (
 	"fmt"
 	"io/ioutil"
 
-	"github.com/s9rA16Bf4/Go-tools/tools"
+	tools "github.com/s9rA16Bf4/Go-tools"
 	"github.com/s9rA16Bf4/go-evil/utility/structure/json"
-	"github.com/s9rA16Bf4/notify_handler/go/notify"
+	notify "github.com/s9rA16Bf4/notify_handler"
 )
 
 // Includes the provided file in the malware, the result can be found in one of the compiler time variables
 func Include(file_path string, data_object *json.Json_t) {
-	file_path = tools.Erase_delimiter(file_path, []string{"\""}, -1)
+	file_path = tools.EraseDelimiter(file_path, []string{"\""}, -1)
 
 	file_gut, err := ioutil.ReadFile(file_path)
 	if err != nil {
-		notify.Error(err.Error(), "self.Include()")
+		notify.Error(err.Error(), "self.Include()", 1)
 	}
 	new_const := tools.Generate_random_string()
 	final_line := fmt.Sprintf("var %s = \"[HEX];,", new_const)

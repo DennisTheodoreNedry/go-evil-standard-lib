@@ -7,7 +7,7 @@ import (
 	evil_target "github.com/s9rA16Bf4/go-evil/domains/crypto/target"
 	"github.com/s9rA16Bf4/go-evil/utility/structure"
 	"github.com/s9rA16Bf4/go-evil/utility/structure/json"
-	"github.com/s9rA16Bf4/notify_handler/go/notify"
+	notify "github.com/s9rA16Bf4/notify_handler"
 )
 
 func preface_configuration(value string, data_object *json.Json_t) []string {
@@ -16,7 +16,7 @@ func preface_configuration(value string, data_object *json.Json_t) []string {
 	arr := structure.Create_evil_object(value)
 
 	if arr.Length() != 0 && arr.Length() < 4 {
-		notify.Error(fmt.Sprintf("Expected atleast four values, but recieved %d", arr.Length()), "crypt.Decrypt()")
+		notify.Error(fmt.Sprintf("Expected atleast four values, but recieved %d", arr.Length()), "crypt.Decrypt()", 1)
 
 	} else if arr.Length() == 4 {
 		crypto_system := arr.Pop_front()
