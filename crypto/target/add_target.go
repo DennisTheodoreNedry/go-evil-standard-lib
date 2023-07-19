@@ -21,7 +21,10 @@ func Add(value string, data_object *json.Json_t) []string {
 			"if target != \"\"{",
 			"spine.crypt.add_target(target)",
 			"}",
+			"fmt.Println(target)",
 		}})
+
+	data_object.Add_go_import("fmt")
 
 	// Construct our int array
 	parameter := data_object.Generate_int_array_parameter(value)
