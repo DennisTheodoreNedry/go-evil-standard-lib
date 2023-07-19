@@ -15,14 +15,14 @@ func Kill_id(value string, data_object *json.Json_t) []string {
 	data_object.Add_go_function(functions.Go_func_t{Name: function_call, Func_type: "", Part_of_struct: "", Return_type: "",
 		Parameters: []string{"repr_1 []int"},
 		Gut: []string{
-			"value1 := tools.String_to_int(spine.variable.get(spine.alpha.construct_string(repr_1)))",
+			"value1 := gotools.StringToInt(spine.variable.get(spine.alpha.construct_string(repr_1)))",
 			"err := coldfire.PkillPid(value1)",
 			"if err != nil{",
 			"spine.log(err.Error())",
 			"}",
 		}})
 
-	data_object.Add_go_import("tools github.com/s9rA16Bf4/Go-tools")
+	data_object.Add_go_import("github.com/s9rA16Bf4/Go-tools")
 	data_object.Add_go_import("github.com/redcode-labs/Coldfire")
 
 	parameter_1 := data_object.Generate_int_array_parameter(value)

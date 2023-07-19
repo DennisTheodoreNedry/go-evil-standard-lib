@@ -3,14 +3,14 @@ package policy
 import (
 	"fmt"
 
-	tools "github.com/s9rA16Bf4/Go-tools"
+	gotools "github.com/s9rA16Bf4/Go-tools"
 	"github.com/s9rA16Bf4/go-evil/utility/structure/functions"
 	"github.com/s9rA16Bf4/go-evil/utility/structure/json"
 	notify "github.com/s9rA16Bf4/notify_handler"
 )
 
 func Set_execution(value string, data_object *json.Json_t) []string {
-	value = tools.EraseDelimiter(value, []string{"\""}, -1)
+	value = gotools.EraseDelimiter(value, []string{"\""}, -1)
 
 	function_call := "set_execution_policy"
 	possible_policys := []string{"AllSigned", "Bypass", "Default", "RemoteSigned", "Restricted", "Undefined", "Unrestricted"}

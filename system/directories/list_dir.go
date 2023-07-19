@@ -38,7 +38,7 @@ func List(value string, data_object *json.Json_t) []string {
 
 	data_object.Add_go_import("io/ioutil")
 	data_object.Add_go_import("fmt")
-	data_object.Add_go_import("notify github.com/s9rA16Bf4/notify_handler")
+	data_object.Add_go_import("github.com/s9rA16Bf4/notify_handler")
 
 	return []string{fmt.Sprintf("%s(%s)", function_call, arr.To_string("array"))}
 

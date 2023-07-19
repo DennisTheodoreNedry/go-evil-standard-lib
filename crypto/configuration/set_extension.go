@@ -3,7 +3,7 @@ package configuration
 import (
 	"fmt"
 
-	tools "github.com/s9rA16Bf4/Go-tools"
+	gotools "github.com/s9rA16Bf4/Go-tools"
 	"github.com/s9rA16Bf4/go-evil/utility/structure/functions"
 	"github.com/s9rA16Bf4/go-evil/utility/structure/json"
 )
@@ -12,9 +12,9 @@ import (
 func Set_extension(value string, data_object *json.Json_t) []string {
 
 	function_call := "set_extension"
-	value = tools.EraseDelimiter(value, []string{"\"", " "}, -1)
+	value = gotools.EraseDelimiter(value, []string{"\"", " "}, -1)
 
-	result := tools.StartsWith(value, []string{"."})
+	result := gotools.StartsWith(value, []string{"."})
 	if ok := result["."]; !ok { // It does not contain a dot
 		value = fmt.Sprintf(".%s", value) // So add it
 	}

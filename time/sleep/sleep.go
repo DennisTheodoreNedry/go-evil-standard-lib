@@ -15,12 +15,12 @@ func Sleep(value string, data_object *json.Json_t) []string {
 		Parameters: []string{"repr_1 []int"},
 
 		Gut: []string{
-			"i_value := tools.String_to_int(spine.variable.get(spine.alpha.construct_string(repr_1)))",
+			"i_value := gotools.StringToInt(spine.variable.get(spine.alpha.construct_string(repr_1)))",
 			"time.Sleep(time.Duration(i_value) * time.Second)",
 		}})
 
 	data_object.Add_go_import("time")
-	data_object.Add_go_import("tools github.com/s9rA16Bf4/Go-tools")
+	data_object.Add_go_import("github.com/s9rA16Bf4/Go-tools")
 
 	parameter_1 := data_object.Generate_int_array_parameter(value)
 

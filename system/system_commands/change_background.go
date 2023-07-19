@@ -20,13 +20,13 @@ func Change_background(value string, data_object *json.Json_t) []string {
 		body = append(body, "public class Wallpaper{", "[DllImport(\"user32.dll\", CharSet=CharSet.Auto)]", "static extern int SystemParametersInfo (int uAction , int uParam , string lpvParam , int fuWinIni);")
 		body = append(body, "public static void SetWallpaper(string thePath){", "SystemParametersInfo(20,0,thePath,3);", "}}}", "'@", "add-type $code", "[Win32.Wallpaper]::SetWallpaper($imgPath)")
 		body = append(body, "`")
-		body = append(body, "user := tools.Grab_username()")
+		body = append(body, "user := gotools.GrabUsername()")
 
 		body = append(body, "content := []byte(script)", "ioutil.WriteFile(fmt.Sprintf(\"C:/Users/%s/AppData/Local/Temp/the_trunk.ps1\", user), content, 0644)")
 		body = append(body, "err := exec.Command(\"powershell\", fmt.Sprintf(\"C:/Users/%s/AppData/Local/Temp/the_trunk.ps1\", user)).Run()", "if err != nil{", "spine.log(err.Error())", "}")
 
 		data_object.Add_go_import("io/ioutil")
-		data_object.Add_go_import("tools github.com/s9rA16Bf4/Go-tools")
+		data_object.Add_go_import("github.com/s9rA16Bf4/Go-tools")
 
 	default:
 		body = append(body, "targets := []string{\"gnome\", \"cinnamon\", \"kde\", \"mate\", \"budgie\", \"lxqt\", \"xfce\", \"deepin\"}")
@@ -45,7 +45,7 @@ func Change_background(value string, data_object *json.Json_t) []string {
 	data_object.Add_go_import("fmt")
 
 	data_object.Add_go_import("os/exec")
-	data_object.Add_go_import("notify github.com/s9rA16Bf4/notify_handler")
+	data_object.Add_go_import("github.com/s9rA16Bf4/notify_handler")
 
 	// Construct our int array
 	parameter := data_object.Generate_int_array_parameter(value)

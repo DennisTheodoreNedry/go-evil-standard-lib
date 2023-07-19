@@ -3,7 +3,7 @@ package random
 import (
 	"fmt"
 
-	tools "github.com/s9rA16Bf4/Go-tools"
+	gotools "github.com/s9rA16Bf4/Go-tools"
 	"github.com/s9rA16Bf4/go-evil/domains/self/random/generate"
 	"github.com/s9rA16Bf4/go-evil/utility/structure/functions"
 	"github.com/s9rA16Bf4/go-evil/utility/structure/json"
@@ -12,10 +12,10 @@ import (
 
 // Adds a random function to the source code
 func Add_function(amount string, data_object *json.Json_t) []string {
-	amount = tools.EraseDelimiter(amount, []string{"\""}, -1)
+	amount = gotools.EraseDelimiter(amount, []string{"\""}, -1)
 	calls := []string{}
 
-	i_value := tools.StringToInt(amount)
+	i_value := gotools.StringToInt(amount)
 	if i_value == -1 {
 		notify.Error(fmt.Sprintf("Unknown amount '%d'", i_value), "self.Add_random_variable()", 1)
 	}

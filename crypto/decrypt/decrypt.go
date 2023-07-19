@@ -87,7 +87,7 @@ func Decrypt(value string, data_object *json.Json_t) []string {
 	data_object.Add_go_import("crypto/rsa")
 	data_object.Add_go_import("crypto/sha256")
 	data_object.Add_go_import("crypto/rand")
-	data_object.Add_go_import("notify github.com/s9rA16Bf4/notify_handler")
+	data_object.Add_go_import("github.com/s9rA16Bf4/notify_handler")
 
 	call_history = append(call_history, fmt.Sprintf("%s()", function_call))
 

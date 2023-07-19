@@ -4,6 +4,7 @@ import (
 	"fmt"
 
 	"github.com/s9rA16Bf4/go-evil/domains/window/bind"
+	"github.com/s9rA16Bf4/go-evil/domains/window/load"
 	"github.com/s9rA16Bf4/go-evil/domains/window/navigate"
 	"github.com/s9rA16Bf4/go-evil/domains/window/run"
 	"github.com/s9rA16Bf4/go-evil/domains/window/set"
@@ -42,6 +43,9 @@ func Parser(function string, value string, data_object *json.Json_t) []string {
 
 	case "navigate":
 		call = navigate.Navigate(value, data_object)
+
+	case "load":
+		load.Load(value, data_object)
 
 	default:
 		notify.Error(fmt.Sprintf("Unknown function '%s'", function), "window.Parser()", 1)

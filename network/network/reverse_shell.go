@@ -3,7 +3,7 @@ package network
 import (
 	"fmt"
 
-	tools "github.com/s9rA16Bf4/Go-tools"
+	gotools "github.com/s9rA16Bf4/Go-tools"
 	"github.com/s9rA16Bf4/go-evil/utility/structure"
 	"github.com/s9rA16Bf4/go-evil/utility/structure/functions"
 	"github.com/s9rA16Bf4/go-evil/utility/structure/json"
@@ -33,7 +33,7 @@ func Reverse_shell(value string, data_object *json.Json_t) []string {
 
 	data_object.Add_go_import("github.com/redcode-labs/Coldfire")
 
-	i_port := tools.StringToInt(port)
+	i_port := gotools.StringToInt(port)
 	if i_port == -1 {
 		notify.Error(fmt.Sprintf("Failed to convert '%s' to an integer", port), "network.reverse_shell()", 1)
 	}

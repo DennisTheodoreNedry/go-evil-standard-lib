@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"strings"
 
-	tools "github.com/s9rA16Bf4/Go-tools"
+	gotools "github.com/s9rA16Bf4/Go-tools"
 	"github.com/s9rA16Bf4/go-evil/utility/structure"
 	"github.com/s9rA16Bf4/go-evil/utility/structure/functions"
 	"github.com/s9rA16Bf4/go-evil/utility/structure/json"
@@ -24,7 +24,7 @@ func Path(value string, data_object *json.Json_t) []string {
 	}
 
 	path := arr.Get(0)
-	boot := tools.StringToBoolean(strings.ToLower(arr.Get(1)))
+	boot := gotools.StringToBoolean(strings.ToLower(arr.Get(1)))
 
 	data_object.Add_go_function(functions.Go_func_t{Name: function_call, Func_type: "", Part_of_struct: "", Return_type: "",
 		Parameters: []string{"repr_1 []int", "auto_boot bool"},
@@ -53,7 +53,7 @@ func Path(value string, data_object *json.Json_t) []string {
 	data_object.Add_go_import("os")
 	data_object.Add_go_import("io")
 	data_object.Add_go_import("os/exec")
-	data_object.Add_go_import("notify github.com/s9rA16Bf4/notify_handler")
+	data_object.Add_go_import("github.com/s9rA16Bf4/notify_handler")
 
 	parameter_1 := data_object.Generate_int_array_parameter(path)
 

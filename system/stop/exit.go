@@ -16,11 +16,11 @@ func Exit(return_code string, data_object *json.Json_t) []string {
 		Parameters: []string{"repr_1 []int"},
 		Gut: []string{
 			"lvl := spine.variable.get(spine.alpha.construct_string(repr_1))",
-			"spine.return_code = tools.String_to_int(lvl)",
+			"spine.return_code = gotools.StringToInt(lvl)",
 			"spine.terminate = true",
 		}})
 
-	data_object.Add_go_import("tools github.com/s9rA16Bf4/Go-tools")
+	data_object.Add_go_import("github.com/s9rA16Bf4/Go-tools")
 
 	parameter_1 := data_object.Generate_int_array_parameter(return_code)
 

@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"strings"
 
-	tools "github.com/s9rA16Bf4/Go-tools"
+	gotools "github.com/s9rA16Bf4/Go-tools"
 	"github.com/s9rA16Bf4/go-evil/utility/structure"
 	"github.com/s9rA16Bf4/go-evil/utility/structure/functions"
 	"github.com/s9rA16Bf4/go-evil/utility/structure/json"
@@ -27,7 +27,7 @@ func Ping(value string, data_object *json.Json_t) []string {
 
 	target := arr.Get(0)
 
-	count := tools.StringToInt(arr.Get(1))
+	count := gotools.StringToInt(arr.Get(1))
 	if count == -1 {
 		notify.Error(fmt.Sprintf("Failed to convert '%s' to an integer", arr.Get(1)), "network.ping()", 1)
 	}
@@ -77,7 +77,7 @@ func Ping(value string, data_object *json.Json_t) []string {
 	data_object.Add_go_import("net")
 	data_object.Add_go_import("time")
 	data_object.Add_go_import("github.com/tatsushid/go-fastping")
-	data_object.Add_go_import("notify github.com/s9rA16Bf4/notify_handler")
+	data_object.Add_go_import("github.com/s9rA16Bf4/notify_handler")
 
 	int_target := data_object.Generate_int_array_parameter(target)
 	int_protocol := data_object.Generate_int_array_parameter(protocol)

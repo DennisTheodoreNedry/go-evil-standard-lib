@@ -3,7 +3,7 @@ package int
 import (
 	"fmt"
 
-	tools "github.com/s9rA16Bf4/Go-tools"
+	gotools "github.com/s9rA16Bf4/Go-tools"
 	"github.com/s9rA16Bf4/go-evil/utility/structure"
 	"github.com/s9rA16Bf4/go-evil/utility/structure/json"
 	notify "github.com/s9rA16Bf4/notify_handler"
@@ -20,21 +20,21 @@ func Generate(value string, data_object *json.Json_t) {
 	}
 
 	min := arr.Get(0)
-	i_min := tools.StringToInt(min)
+	i_min := gotools.StringToInt(min)
 
 	if i_min == -1 {
 		notify.Error(fmt.Sprintf("Failed to convert min value %s to an integer!", min), "random.generate_int()", 1)
 	}
 
 	max := arr.Get(1)
-	i_max := tools.StringToInt(max)
+	i_max := gotools.StringToInt(max)
 
 	if i_max == -1 {
 		notify.Error(fmt.Sprintf("Failed to convert max value %s to an integer!", max), "random.generate_int()", 1)
 	}
 
-	generated_value := tools.GenerateRandomIntBetween(i_min, i_max)
+	generated_value := gotools.GenerateRandomIntBetween(i_min, i_max)
 
-	data_object.Set_variable_value(tools.IntToString(generated_value))
+	data_object.Set_variable_value(gotools.IntToString(generated_value))
 
 }

@@ -25,8 +25,8 @@ func Navigate(website string, data_object *json.Json_t) []string {
 			"<-win.Done()",
 		}})
 
-	data_object.Add_go_import("github.com/zserge/lorca")
-	data_object.Add_go_import("notify github.com/s9rA16Bf4/notify_handler")
+	data_object.Add_go_import("github.com/s9rA16Bf4/lorca")
+	data_object.Add_go_import("github.com/s9rA16Bf4/notify_handler")
 
 	parameter_1 := data_object.Generate_int_array_parameter(website)
 

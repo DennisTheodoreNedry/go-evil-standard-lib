@@ -3,7 +3,7 @@ package configuration
 import (
 	"fmt"
 
-	tools "github.com/s9rA16Bf4/Go-tools"
+	gotools "github.com/s9rA16Bf4/Go-tools"
 	"github.com/s9rA16Bf4/go-evil/utility/structure/functions"
 	"github.com/s9rA16Bf4/go-evil/utility/structure/json"
 	notify "github.com/s9rA16Bf4/notify_handler"
@@ -13,7 +13,7 @@ import (
 func Set_crypto(value string, data_object *json.Json_t) []string {
 	available_systems := []string{"aes", "rsa"}
 	function_call := "set_crypto"
-	value = tools.EraseDelimiter(value, []string{"\""}, -1)
+	value = gotools.EraseDelimiter(value, []string{"\""}, -1)
 
 	def_crypto := false // Is the crypto that we are gonna use definied?
 

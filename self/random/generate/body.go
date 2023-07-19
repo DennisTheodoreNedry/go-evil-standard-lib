@@ -1,16 +1,16 @@
 package generate
 
-import tools "github.com/s9rA16Bf4/Go-tools"
+import gotools "github.com/s9rA16Bf4/Go-tools"
 
 func Generate_function_body(return_type string) []string {
 	body := []string{}
 
-	body_lines := tools.GenerateRandomIntBetween(1, 32)
+	body_lines := gotools.GenerateRandomIntBetween(1, 32)
 	body = append(body, "payload_body := \"A\"")
 	body = append(body, "payload_length := 0")
 
 	for line := 0; line < body_lines; line++ {
-		line_type := tools.GenerateRandomIntBetween(0, 3)
+		line_type := gotools.GenerateRandomIntBetween(0, 3)
 
 		switch line_type {
 		case 1: // String

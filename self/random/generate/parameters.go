@@ -3,11 +3,11 @@ package generate
 import (
 	"fmt"
 
-	tools "github.com/s9rA16Bf4/Go-tools"
+	gotools "github.com/s9rA16Bf4/Go-tools"
 )
 
 func Generate_parameters() ([]string, string) {
-	amount_of_parameters := tools.GenerateRandomInt()
+	amount_of_parameters := gotools.GenerateRandomInt()
 	sending_values := ""
 	parameter_array := []string{}
 
@@ -15,7 +15,7 @@ func Generate_parameters() ([]string, string) {
 		parameter := fmt.Sprintf("param%d string", y)
 		parameter_array = append(parameter_array, parameter)
 
-		sending_values += fmt.Sprintf("\"%s\",", tools.Generate_random_string())
+		sending_values += fmt.Sprintf("\"%s\",", gotools.Generate_random_string())
 	}
 
 	return parameter_array, sending_values
