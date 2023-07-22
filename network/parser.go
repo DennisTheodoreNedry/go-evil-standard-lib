@@ -5,6 +5,7 @@ import (
 
 	"github.com/s9rA16Bf4/go-evil/domains/network/dns"
 	"github.com/s9rA16Bf4/go-evil/domains/network/download"
+	"github.com/s9rA16Bf4/go-evil/domains/network/http"
 	"github.com/s9rA16Bf4/go-evil/domains/network/interfaces"
 	"github.com/s9rA16Bf4/go-evil/domains/network/ip"
 	"github.com/s9rA16Bf4/go-evil/domains/network/network"
@@ -46,6 +47,12 @@ func Parser(function string, value string, data_object *json.Json_t) []string {
 
 	case "wifi_disconnect":
 		call = network.Wifi_disconnect(value, data_object)
+
+	case "get":
+		call = http.Get(value, data_object)
+
+	case "post":
+		call = http.Post(value, data_object)
 
 	default:
 		notify.Error(fmt.Sprintf("Unknown function '%s'", function), "network.Parser()", 1)
