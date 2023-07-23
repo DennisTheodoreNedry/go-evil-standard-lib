@@ -40,7 +40,7 @@ func Write(value string, data_object *json.Json_t) []string {
 			"}",
 
 			"defer file.Close()",
-			"result := gotools.Starts_with(content, []string{\"[HEX];\"})",
+			"result := gotools.StartsWith(content, []string{\"[HEX];\"})",
 			"if ok := result[\"[HEX];\"]; !ok {",
 			"file.WriteString(content)",
 			"}else{",
