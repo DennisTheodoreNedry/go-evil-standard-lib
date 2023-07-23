@@ -9,7 +9,7 @@ import (
 
 // Tries to grab all processes
 // Input None
-// The return is an evil array containing all found users which is placed in a runtime variable
+// The return is an evil array containing all found processes which is placed in a runtime variable
 func Get(value string, data_object *json.Json_t) []string {
 	function_call := "get_processes"
 

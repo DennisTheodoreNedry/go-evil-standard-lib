@@ -7,7 +7,8 @@ import (
 	"github.com/s9rA16Bf4/go-evil/utility/structure/json"
 )
 
-// Executes a command on the running OS and prints the result
+// Executes a command on the running OS and saves the result in a
+// runtime variable
 func Exec(cmd string, data_object *json.Json_t) []string {
 	function_call := "Exec"
 
@@ -21,9 +22,9 @@ func Exec(cmd string, data_object *json.Json_t) []string {
 			"args := strings.ReplaceAll(strings.Join(split_cmd[1:], \" \"), \"\\\"\", \"\")",
 			"out, err := exec.Command(cmd, args).Output()",
 			"if err != nil {",
-			"fmt.Println(err.Error())",
+			"spine.log(err.Error())",
 			"}else{",
-			"fmt.Println(string(out[:]))",
+			"spine.variable.set(string(out[:]))",
 			"}"}})
 
 	data_object.Add_go_import("os/exec")
