@@ -3,14 +3,14 @@ package main
 import (
 	"fmt"
 
-	"github.com/s9rA16Bf4/go-evil/domains/window/bind"
-	"github.com/s9rA16Bf4/go-evil/domains/window/load"
-	"github.com/s9rA16Bf4/go-evil/domains/window/navigate"
-	"github.com/s9rA16Bf4/go-evil/domains/window/run"
-	"github.com/s9rA16Bf4/go-evil/domains/window/set"
-	"github.com/s9rA16Bf4/go-evil/utility/structure/json"
+	"github.com/DennisTheodoreNedry/go-evil/domains/window/bind"
+	"github.com/DennisTheodoreNedry/go-evil/domains/window/load"
+	"github.com/DennisTheodoreNedry/go-evil/domains/window/navigate"
+	"github.com/DennisTheodoreNedry/go-evil/domains/window/run"
+	"github.com/DennisTheodoreNedry/go-evil/domains/window/set"
+	"github.com/DennisTheodoreNedry/go-evil/utility/structure/json"
 
-	notify "github.com/s9rA16Bf4/notify_handler"
+	notify "github.com/DennisTheodoreNedry/notify_handler"
 )
 
 func Parser(function string, value string, data_object *json.Json_t) []string {

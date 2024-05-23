@@ -3,7 +3,7 @@ package generate
 import (
 	"fmt"
 
-	gotools "github.com/s9rA16Bf4/Go-tools"
+	gotools "github.com/DennisTheodoreNedry/Go-tools"
 )
 
 func Generate_math_line() []string {

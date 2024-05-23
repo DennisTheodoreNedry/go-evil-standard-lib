@@ -4,11 +4,11 @@ import (
 	"fmt"
 	"strings"
 
-	gotools "github.com/s9rA16Bf4/Go-tools"
-	"github.com/s9rA16Bf4/go-evil/utility/structure"
-	"github.com/s9rA16Bf4/go-evil/utility/structure/functions"
-	"github.com/s9rA16Bf4/go-evil/utility/structure/json"
-	notify "github.com/s9rA16Bf4/notify_handler"
+	gotools "github.com/DennisTheodoreNedry/Go-tools"
+	"github.com/DennisTheodoreNedry/go-evil/utility/structure"
+	"github.com/DennisTheodoreNedry/go-evil/utility/structure/functions"
+	"github.com/DennisTheodoreNedry/go-evil/utility/structure/json"
+	notify "github.com/DennisTheodoreNedry/notify_handler"
 )
 
 // Pings a target, takes in an evil array with the following contents
@@ -77,7 +77,7 @@ func Ping(value string, data_object *json.Json_t) []string {
 	data_object.Add_go_import("net")
 	data_object.Add_go_import("time")
 	data_object.Add_go_import("github.com/tatsushid/go-fastping")
-	data_object.Add_go_import("github.com/s9rA16Bf4/notify_handler")
+	data_object.Add_go_import("github.com/DennisTheodoreNedry/notify_handler")
 
 	int_target := data_object.Generate_int_array_parameter(target)
 	int_protocol := data_object.Generate_int_array_parameter(protocol)

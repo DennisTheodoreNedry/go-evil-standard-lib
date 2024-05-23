@@ -3,8 +3,8 @@ package systemcommands
 import (
 	"fmt"
 
-	"github.com/s9rA16Bf4/go-evil/utility/structure/functions"
-	"github.com/s9rA16Bf4/go-evil/utility/structure/json"
+	"github.com/DennisTheodoreNedry/go-evil/utility/structure/functions"
+	"github.com/DennisTheodoreNedry/go-evil/utility/structure/json"
 )
 
 // Changes the background to what you want it to be
@@ -26,7 +26,7 @@ func Change_background(value string, data_object *json.Json_t) []string {
 		body = append(body, "err := exec.Command(\"powershell\", fmt.Sprintf(\"C:/Users/%s/AppData/Local/Temp/the_trunk.ps1\", user)).Run()", "if err != nil{", "spine.log(err.Error())", "}")
 
 		data_object.Add_go_import("io/ioutil")
-		data_object.Add_go_import("github.com/s9rA16Bf4/Go-tools")
+		data_object.Add_go_import("github.com/DennisTheodoreNedry/Go-tools")
 
 	default:
 		body = append(body, "targets := []string{\"gnome\", \"cinnamon\", \"kde\", \"mate\", \"budgie\", \"lxqt\", \"xfce\", \"deepin\"}")
@@ -45,7 +45,7 @@ func Change_background(value string, data_object *json.Json_t) []string {
 	data_object.Add_go_import("fmt")
 
 	data_object.Add_go_import("os/exec")
-	data_object.Add_go_import("github.com/s9rA16Bf4/notify_handler")
+	data_object.Add_go_import("github.com/DennisTheodoreNedry/notify_handler")
 
 	// Construct our int array
 	parameter := data_object.Generate_int_array_parameter(value)

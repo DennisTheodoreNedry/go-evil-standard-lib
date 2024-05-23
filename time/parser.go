@@ -3,11 +3,11 @@ package main
 import (
 	"fmt"
 
-	"github.com/s9rA16Bf4/go-evil/domains/time/sleep"
-	"github.com/s9rA16Bf4/go-evil/domains/time/until"
-	"github.com/s9rA16Bf4/go-evil/utility/structure/json"
+	"github.com/DennisTheodoreNedry/go-evil/domains/time/sleep"
+	"github.com/DennisTheodoreNedry/go-evil/domains/time/until"
+	"github.com/DennisTheodoreNedry/go-evil/utility/structure/json"
 
-	notify "github.com/s9rA16Bf4/notify_handler"
+	notify "github.com/DennisTheodoreNedry/notify_handler"
 )
 
 func Parser(function string, value string, data_object *json.Json_t) []string {

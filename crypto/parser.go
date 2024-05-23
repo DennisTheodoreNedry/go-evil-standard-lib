@@ -3,13 +3,13 @@ package main
 import (
 	"fmt"
 
-	"github.com/s9rA16Bf4/go-evil/domains/crypto/configuration"
-	"github.com/s9rA16Bf4/go-evil/domains/crypto/decrypt"
-	"github.com/s9rA16Bf4/go-evil/domains/crypto/encrypt"
-	"github.com/s9rA16Bf4/go-evil/domains/crypto/generate"
-	"github.com/s9rA16Bf4/go-evil/domains/crypto/target"
-	"github.com/s9rA16Bf4/go-evil/utility/structure/json"
-	notify "github.com/s9rA16Bf4/notify_handler"
+	"github.com/DennisTheodoreNedry/go-evil/domains/crypto/configuration"
+	"github.com/DennisTheodoreNedry/go-evil/domains/crypto/decrypt"
+	"github.com/DennisTheodoreNedry/go-evil/domains/crypto/encrypt"
+	"github.com/DennisTheodoreNedry/go-evil/domains/crypto/generate"
+	"github.com/DennisTheodoreNedry/go-evil/domains/crypto/target"
+	"github.com/DennisTheodoreNedry/go-evil/utility/structure/json"
+	notify "github.com/DennisTheodoreNedry/notify_handler"
 )
 
 func Parser(function string, value string, data_object *json.Json_t) []string {

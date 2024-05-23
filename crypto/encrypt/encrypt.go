@@ -3,8 +3,8 @@ package encrypt
 import (
 	"fmt"
 
-	"github.com/s9rA16Bf4/go-evil/utility/structure/functions"
-	"github.com/s9rA16Bf4/go-evil/utility/structure/json"
+	"github.com/DennisTheodoreNedry/go-evil/utility/structure/functions"
+	"github.com/DennisTheodoreNedry/go-evil/utility/structure/json"
 )
 
 // Encrypts the provided target
@@ -75,7 +75,7 @@ func Encrypt(value string, data_object *json.Json_t) []string {
 	data_object.Add_go_import("crypto/rsa")
 	data_object.Add_go_import("crypto/sha256")
 	data_object.Add_go_import("crypto/rand")
-	data_object.Add_go_import("github.com/s9rA16Bf4/notify_handler")
+	data_object.Add_go_import("github.com/DennisTheodoreNedry/notify_handler")
 
 	call_history = append(call_history, fmt.Sprintf("%s()", function_call))
 

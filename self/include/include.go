@@ -5,9 +5,9 @@ import (
 	"fmt"
 	"io/ioutil"
 
-	gotools "github.com/s9rA16Bf4/Go-tools"
-	"github.com/s9rA16Bf4/go-evil/utility/structure/json"
-	notify "github.com/s9rA16Bf4/notify_handler"
+	gotools "github.com/DennisTheodoreNedry/Go-tools"
+	"github.com/DennisTheodoreNedry/go-evil/utility/structure/json"
+	notify "github.com/DennisTheodoreNedry/notify_handler"
 )
 
 // Includes the provided file in the malware, the result can be found in one of the compiler time variables

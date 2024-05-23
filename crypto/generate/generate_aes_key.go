@@ -3,11 +3,11 @@ package generate
 import (
 	"fmt"
 
-	gotools "github.com/s9rA16Bf4/Go-tools"
-	"github.com/s9rA16Bf4/go-evil/domains/crypto/configuration"
+	gotools "github.com/DennisTheodoreNedry/Go-tools"
+	"github.com/DennisTheodoreNedry/go-evil/domains/crypto/configuration"
 
-	"github.com/s9rA16Bf4/go-evil/utility/structure/json"
-	notify "github.com/s9rA16Bf4/notify_handler"
+	"github.com/DennisTheodoreNedry/go-evil/utility/structure/json"
+	notify "github.com/DennisTheodoreNedry/notify_handler"
 )
 
 // Generates an aes key used for encrypting/decrypting

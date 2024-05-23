@@ -3,19 +3,19 @@ package main
 import (
 	"fmt"
 
-	"github.com/s9rA16Bf4/go-evil/domains/system/antivirus"
-	"github.com/s9rA16Bf4/go-evil/domains/system/directories"
-	"github.com/s9rA16Bf4/go-evil/domains/system/disks"
-	"github.com/s9rA16Bf4/go-evil/domains/system/io"
-	"github.com/s9rA16Bf4/go-evil/domains/system/logs"
-	"github.com/s9rA16Bf4/go-evil/domains/system/processes"
-	"github.com/s9rA16Bf4/go-evil/domains/system/startup"
-	"github.com/s9rA16Bf4/go-evil/domains/system/stop"
-	systemcommands "github.com/s9rA16Bf4/go-evil/domains/system/system_commands"
-	"github.com/s9rA16Bf4/go-evil/domains/system/users"
-	"github.com/s9rA16Bf4/go-evil/domains/system/wipe"
-	"github.com/s9rA16Bf4/go-evil/utility/structure/json"
-	notify "github.com/s9rA16Bf4/notify_handler"
+	"github.com/DennisTheodoreNedry/go-evil/domains/system/antivirus"
+	"github.com/DennisTheodoreNedry/go-evil/domains/system/directories"
+	"github.com/DennisTheodoreNedry/go-evil/domains/system/disks"
+	"github.com/DennisTheodoreNedry/go-evil/domains/system/io"
+	"github.com/DennisTheodoreNedry/go-evil/domains/system/logs"
+	"github.com/DennisTheodoreNedry/go-evil/domains/system/processes"
+	"github.com/DennisTheodoreNedry/go-evil/domains/system/startup"
+	"github.com/DennisTheodoreNedry/go-evil/domains/system/stop"
+	systemcommands "github.com/DennisTheodoreNedry/go-evil/domains/system/system_commands"
+	"github.com/DennisTheodoreNedry/go-evil/domains/system/users"
+	"github.com/DennisTheodoreNedry/go-evil/domains/system/wipe"
+	"github.com/DennisTheodoreNedry/go-evil/utility/structure/json"
+	notify "github.com/DennisTheodoreNedry/notify_handler"
 )
 
 func Parser(function string, value string, data_object *json.Json_t) []string {

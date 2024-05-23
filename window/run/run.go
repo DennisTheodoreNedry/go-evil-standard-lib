@@ -5,9 +5,9 @@ import (
 	"os"
 	"strings"
 
-	"github.com/s9rA16Bf4/go-evil/utility/structure/functions"
-	"github.com/s9rA16Bf4/go-evil/utility/structure/json"
-	notify "github.com/s9rA16Bf4/notify_handler"
+	"github.com/DennisTheodoreNedry/go-evil/utility/structure/functions"
+	"github.com/DennisTheodoreNedry/go-evil/utility/structure/json"
+	notify "github.com/DennisTheodoreNedry/notify_handler"
 )
 
 // Drops all the needed code from the json strucutre into one function
@@ -61,9 +61,9 @@ func Run(data_object *json.Json_t) []string {
 
 	data_object.Add_go_function(functions.Go_func_t{Name: function_call, Func_type: "", Part_of_struct: "", Return_type: "", Parameters: []string{}, Gut: body})
 
-	data_object.Add_go_import("github.com/s9rA16Bf4/lorca")
+	data_object.Add_go_import("github.com/DennisTheodoreNedry/lorca")
 	data_object.Add_go_import("net/url")
-	data_object.Add_go_import("github.com/s9rA16Bf4/notify_handler")
+	data_object.Add_go_import("github.com/DennisTheodoreNedry/notify_handler")
 	data_object.Add_go_import("fmt")
 
 	return []string{function_call}

@@ -1,6 +1,6 @@
 package generate
 
-import gotools "github.com/s9rA16Bf4/Go-tools"
+import gotools "github.com/DennisTheodoreNedry/Go-tools"
 
 func Generate_function_body(return_type string) []string {
 	body := []string{}

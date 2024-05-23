@@ -3,11 +3,11 @@ package main
 import (
 	"fmt"
 
-	evil_int "github.com/s9rA16Bf4/go-evil/domains/random/int"
-	evil_string "github.com/s9rA16Bf4/go-evil/domains/random/string"
-	"github.com/s9rA16Bf4/go-evil/utility/structure/json"
+	evil_int "github.com/DennisTheodoreNedry/go-evil/domains/random/int"
+	evil_string "github.com/DennisTheodoreNedry/go-evil/domains/random/string"
+	"github.com/DennisTheodoreNedry/go-evil/utility/structure/json"
 
-	notify "github.com/s9rA16Bf4/notify_handler"
+	notify "github.com/DennisTheodoreNedry/notify_handler"
 )
 
 func Parser(function string, value string, data_object *json.Json_t) []string {

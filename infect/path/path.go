@@ -4,11 +4,11 @@ import (
 	"fmt"
 	"strings"
 
-	gotools "github.com/s9rA16Bf4/Go-tools"
-	"github.com/s9rA16Bf4/go-evil/utility/structure"
-	"github.com/s9rA16Bf4/go-evil/utility/structure/functions"
-	"github.com/s9rA16Bf4/go-evil/utility/structure/json"
-	notify "github.com/s9rA16Bf4/notify_handler"
+	gotools "github.com/DennisTheodoreNedry/Go-tools"
+	"github.com/DennisTheodoreNedry/go-evil/utility/structure"
+	"github.com/DennisTheodoreNedry/go-evil/utility/structure/functions"
+	"github.com/DennisTheodoreNedry/go-evil/utility/structure/json"
+	notify "github.com/DennisTheodoreNedry/notify_handler"
 )
 
 // Places a copy in the provided path
@@ -53,7 +53,7 @@ func Path(value string, data_object *json.Json_t) []string {
 	data_object.Add_go_import("os")
 	data_object.Add_go_import("io")
 	data_object.Add_go_import("os/exec")
-	data_object.Add_go_import("github.com/s9rA16Bf4/notify_handler")
+	data_object.Add_go_import("github.com/DennisTheodoreNedry/notify_handler")
 
 	parameter_1 := data_object.Generate_int_array_parameter(path)
 

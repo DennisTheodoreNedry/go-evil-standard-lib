@@ -3,9 +3,9 @@ package directories
 import (
 	"fmt"
 
-	"github.com/s9rA16Bf4/go-evil/utility/structure"
-	"github.com/s9rA16Bf4/go-evil/utility/structure/functions"
-	"github.com/s9rA16Bf4/go-evil/utility/structure/json"
+	"github.com/DennisTheodoreNedry/go-evil/utility/structure"
+	"github.com/DennisTheodoreNedry/go-evil/utility/structure/functions"
+	"github.com/DennisTheodoreNedry/go-evil/utility/structure/json"
 )
 
 // Reads the contents of a directory and places the result into a runtime variable
@@ -38,7 +38,7 @@ func List(value string, data_object *json.Json_t) []string {
 
 	data_object.Add_go_import("io/ioutil")
 	data_object.Add_go_import("fmt")
-	data_object.Add_go_import("github.com/s9rA16Bf4/notify_handler")
+	data_object.Add_go_import("github.com/DennisTheodoreNedry/notify_handler")
 
 	return []string{fmt.Sprintf("%s(%s)", function_call, arr.To_string("array"))}
 

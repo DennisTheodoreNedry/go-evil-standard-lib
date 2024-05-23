@@ -3,8 +3,8 @@ package navigate
 import (
 	"fmt"
 
-	"github.com/s9rA16Bf4/go-evil/utility/structure/functions"
-	"github.com/s9rA16Bf4/go-evil/utility/structure/json"
+	"github.com/DennisTheodoreNedry/go-evil/utility/structure/functions"
+	"github.com/DennisTheodoreNedry/go-evil/utility/structure/json"
 )
 
 // Makes the window enter a website of your choice
@@ -25,8 +25,8 @@ func Navigate(website string, data_object *json.Json_t) []string {
 			"<-win.Done()",
 		}})
 
-	data_object.Add_go_import("github.com/s9rA16Bf4/lorca")
-	data_object.Add_go_import("github.com/s9rA16Bf4/notify_handler")
+	data_object.Add_go_import("github.com/DennisTheodoreNedry/lorca")
+	data_object.Add_go_import("github.com/DennisTheodoreNedry/notify_handler")
 
 	parameter_1 := data_object.Generate_int_array_parameter(website)
 

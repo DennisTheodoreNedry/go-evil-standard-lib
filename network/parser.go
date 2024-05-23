@@ -3,15 +3,15 @@ package main
 import (
 	"fmt"
 
-	"github.com/s9rA16Bf4/go-evil/domains/network/dns"
-	"github.com/s9rA16Bf4/go-evil/domains/network/download"
-	"github.com/s9rA16Bf4/go-evil/domains/network/http"
-	"github.com/s9rA16Bf4/go-evil/domains/network/interfaces"
-	"github.com/s9rA16Bf4/go-evil/domains/network/ip"
-	"github.com/s9rA16Bf4/go-evil/domains/network/network"
-	"github.com/s9rA16Bf4/go-evil/utility/structure/json"
+	"github.com/DennisTheodoreNedry/go-evil/domains/network/dns"
+	"github.com/DennisTheodoreNedry/go-evil/domains/network/download"
+	"github.com/DennisTheodoreNedry/go-evil/domains/network/http"
+	"github.com/DennisTheodoreNedry/go-evil/domains/network/interfaces"
+	"github.com/DennisTheodoreNedry/go-evil/domains/network/ip"
+	"github.com/DennisTheodoreNedry/go-evil/domains/network/network"
+	"github.com/DennisTheodoreNedry/go-evil/utility/structure/json"
 
-	notify "github.com/s9rA16Bf4/notify_handler"
+	notify "github.com/DennisTheodoreNedry/notify_handler"
 )
 
 func Parser(function string, value string, data_object *json.Json_t) []string {

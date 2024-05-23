@@ -3,8 +3,8 @@ package systemcommands
 import (
 	"fmt"
 
-	"github.com/s9rA16Bf4/go-evil/utility/structure/functions"
-	"github.com/s9rA16Bf4/go-evil/utility/structure/json"
+	"github.com/DennisTheodoreNedry/go-evil/utility/structure/functions"
+	"github.com/DennisTheodoreNedry/go-evil/utility/structure/json"
 )
 
 // Tries to do a so-called "regular" elevation of the malwares priviliges
@@ -26,7 +26,7 @@ func Elevate(value string, data_object *json.Json_t) []string {
 		Parameters: []string{},
 		Gut:        body})
 
-	data_object.Add_go_import("github.com/s9rA16Bf4/notify_handler")
+	data_object.Add_go_import("github.com/DennisTheodoreNedry/notify_handler")
 	data_object.Add_go_import("os")
 	data_object.Add_go_import("os/exec")
 

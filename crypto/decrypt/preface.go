@@ -3,11 +3,11 @@ package decrypt
 import (
 	"fmt"
 
-	"github.com/s9rA16Bf4/go-evil/domains/crypto/configuration"
-	evil_target "github.com/s9rA16Bf4/go-evil/domains/crypto/target"
-	"github.com/s9rA16Bf4/go-evil/utility/structure"
-	"github.com/s9rA16Bf4/go-evil/utility/structure/json"
-	notify "github.com/s9rA16Bf4/notify_handler"
+	"github.com/DennisTheodoreNedry/go-evil/domains/crypto/configuration"
+	evil_target "github.com/DennisTheodoreNedry/go-evil/domains/crypto/target"
+	"github.com/DennisTheodoreNedry/go-evil/utility/structure"
+	"github.com/DennisTheodoreNedry/go-evil/utility/structure/json"
+	notify "github.com/DennisTheodoreNedry/notify_handler"
 )
 
 func preface_configuration(value string, data_object *json.Json_t) []string {
